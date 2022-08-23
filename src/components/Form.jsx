@@ -45,7 +45,7 @@ export const Form = () => {
           </label>
           <input
             id="celular"
-            type="phone"
+            type="number"
             placeholder="Número del celular"
             className="border-2 w-full p-2 mt-2 rounded-md placeholder-gray-400"
             value={celular}
