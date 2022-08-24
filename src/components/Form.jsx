@@ -1,23 +1,35 @@
 import { useState } from "react";
-
+import Swal from "sweetalert2";
 
 export const Form = () => {
+  const [nombre, setNombre] = useState("");
+  const [celular, setCelular] = useState("");
+  const [correo, setCorreo] = useState("");
+  const [fechanacimiento, setFechanacimiento] = useState("");
+  const [error, setError] = useState("")
 
-  const [nombre, setNombre] = useState("")
-  const [celular, setCelular] = useState("")
-  const [correo, setCorreo] = useState("")
-  const [fechanacimiento, setFechanacimiento] = useState("")
-
-  const handleSubmit = (e) =>{
+  const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("ENVIANDO DATOS...")
+    if ([nombre, celular, correo, fechanacimiento].includes("")) {
+      Swal.fire({
+        title: 'Error!',
+        text: 'Todos los campos deben estar diligenciados',
+        icon: 'error',
+        confirmButtonText: 'Ok'
+      })
+      
+    }
+  };
 
-  }
-  
   return (
     <div className="md:w-1/2 lg:w-2/5 mx-5">
-       <h2 className="text-center font-black uppercase text-xl text-zinc-600">Datos personales</h2>
-      <form className="bg-white shadow-md rounded-lg p-8" onSubmit={handleSubmit}>
+      <h2 className="text-center font-black uppercase text-xl text-zinc-600">
+        Datos personales
+      </h2>
+      <form
+        className="bg-white shadow-md rounded-lg p-8"
+        onSubmit={handleSubmit}
+      >
         <div>
           <label
             htmlFor="nombres"
@@ -31,8 +43,8 @@ export const Form = () => {
             placeholder="Nombres completos"
             className="border-2 w-full p-2 mt-2 rounded-md placeholder-gray-400"
             value={nombre}
-            onChange={(e)=> setNombre(e.target.value)}
-            required
+            onChange={(e) => setNombre(e.target.value)}
+            
           />
         </div>
 
@@ -49,8 +61,8 @@ export const Form = () => {
             placeholder="Número del celular"
             className="border-2 w-full p-2 mt-2 rounded-md placeholder-gray-400"
             value={celular}
-            onChange={(e)=> setCelular(e.target.value)}
-            required
+            onChange={(e) => setCelular(e.target.value)}
+            
           />
         </div>
 
@@ -67,8 +79,8 @@ export const Form = () => {
             placeholder="Correo electrónico"
             className="border-2 w-full p-2 mt-2 rounded-md placeholder-gray-400"
             value={correo}
-            onChange={(e)=> setCorreo(e.target.value)}
-            required
+            onChange={(e) => setCorreo(e.target.value)}
+            
           />
         </div>
 
@@ -85,13 +97,13 @@ export const Form = () => {
             placeholder="Fecha de nacimiento"
             className="border-2 w-full p-2 mt-2 rounded-md placeholder-gray-400"
             value={fechanacimiento}
-            onChange={(e)=> setFechanacimiento(e.target.value)}
-            required
+            onChange={(e) => setFechanacimiento(e.target.value)}
+            
           />
         </div>
 
         <div className="mt-5">
-          <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold p-4 rounded w-full">
+          <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold p-4 rounded w-full">
             GUARDAR INFORMACIÓN
           </button>
         </div>
