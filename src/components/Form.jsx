@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Swal from "sweetalert2";
 
-export const Form = () => {
+export const Form = ({tareas, setTareas}) => {
   const [nombre, setNombre] = useState("");
   const [celular, setCelular] = useState("");
   const [correo, setCorreo] = useState("");
@@ -16,8 +16,22 @@ export const Form = () => {
         text: 'Todos los campos deben estar diligenciados',
         icon: 'error',
         confirmButtonText: 'Ok'
-      })
-      
+      })      
+    }else{
+
+      //Este objeto lo envio al setTareas de App.jsx
+      const objetoFormulario = {
+        nombre,
+        celular,
+        correo,
+        fechanacimiento
+      }
+      setTareas([...tareas, objetoFormulario])
+
+      setNombre('')
+      setCorreo('')
+      setFechanacimiento('')
+      setCelular('')
     }
   };
 

@@ -7,16 +7,16 @@ import { ListaTareas } from './components/ListaTareas'
 
 function App() {
 
-
+  const [tareas, setTareas] = useState([])
   return (
     <div className='container mx-auto mt-10'>
-    <Header/>
-    <div className="mt-20 md:flex">
-    <Form/>
-    <ListaTareas/>
-    </div>
+      <Header />
+      <div className="mt-20 md:flex">
+        <Form tareas={tareas} setTareas={setTareas} />
+        <ListaTareas datosFormulario={tareas} />
+      </div>
 
-    
+
     </div>
   )
 }
