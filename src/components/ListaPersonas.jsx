@@ -1,9 +1,9 @@
 import { DatosPersonas } from "./DatosPersonas";
 
-export const ListaTareas = ({ datosFormulario }) => {
+export const ListaPersonas = ({ datosFormulario }) => {
 
   return (
-    <div className="lg:overflow-y-auto lg:overflow-y-scroll mt-2 h-[800px]">
+    <div className="lg:overflow-y-scroll mt-2 h-[800px]">
      
       {datosFormulario.map((datos) => (        
         

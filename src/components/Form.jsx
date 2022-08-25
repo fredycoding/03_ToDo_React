@@ -107,8 +107,7 @@ export const Form = ({tareas, setTareas}) => {
           </label>
           <input
             id="cumple"
-            type="date"
-            placeholder="Fecha de nacimiento"
+            type="date"         
             className="border-2 w-full p-2 mt-2 rounded-md placeholder-gray-400"
             value={fechanacimiento}
             onChange={(e) => setFechanacimiento(e.target.value)}

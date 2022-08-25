@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Header } from './components/Header'
 import { Form } from './components/Form'
-import { ListaTareas } from './components/ListaTareas'
+import { ListaPersonas} from './components/ListaPersonas'
 
 
 
@@ -13,7 +13,7 @@ function App() {
       <Header />
       <div className="mt-20 md:flex">
         <Form tareas={tareas} setTareas={setTareas} />
-        <ListaTareas datosFormulario={tareas} />
+        <ListaPersonas datosFormulario={tareas} />
       </div>
 
 
