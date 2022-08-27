@@ -6,3 +6,12 @@ DEMO: https://famous-gumption-e8d962.netlify.app/
 - Guarda registros en el localstorage
 - Utiliza SweetAlert2 para las alertas de confirmación y eliminación
 
+## Author
+
+<blockquote>
+Fredy A. Diaz B.
+
+</blockquote>
+
+========Thank You !!!=========
+
