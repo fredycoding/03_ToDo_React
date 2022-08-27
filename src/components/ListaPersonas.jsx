@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { DatosPersonas } from "./DatosPersonas";
 
 export const ListaPersonas = ({ datosFormulario, setDato, eliminarDato }) => {
